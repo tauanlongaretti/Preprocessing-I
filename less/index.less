@@ -55,41 +55,164 @@ table {
 
 html, body {
 	height: 100%;
+	width: 94%;
+	margin: 0 auto;
+	box-sizing: border-box;
+	line-height: 1.5;
+}
+
+@lightBackgroundColor: #e0dbcc;
+@darkBackgroundColor: #d6c8a3;
+@bodyFontstack: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+@headlineFontStack: Impact, Haettenschweiler, ‘Arial Narrow Bold’, sans-serif;
+
+.flexProperties {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.rightSection {
+	width: 52%;
+	margin-left: 3%;
 }
 
 .container {
-
-	width: 1200px;
-	margin: 50px auto;
-
+	width: 100%;
+	margin: 5% 0%;
+	
 	header {
-		width: 100%
+		width: 100%;
 
 		nav {
 			display: flex;
-			justify-content: space-between;
+			justify-content: space-around;
 
 			a {
-			  width: 100%;
-			  font-size: 1.3rem; 
-	  }  
+			  font-size: 1.4rem;
+			  text-decoration: none;
+			  color: black; 
+	        }  
+        }	
     }	
-  }	
 }
 
-
+.headline {
+	.flexProperties();
+	align-items: center;
+	margin: 5% 0%;
+	background-image: linear-gradient(@darkBackgroundColor, @lightBackgroundColor);
+	
+		div {
+			text-align: center;
+			width: 70%;
+		}
+	}
+		
 img {
-	width: 20%;
+	width: 30%;	
 }
 
 h1 {
-	font-size: 10vh;
+	font-size: 6vw;
+	text-align: center;
+	margin: 0 auto;
 }
 
 h2 {
-	font-size: 5vh;
+	font-size: 4.2vw;
+
+	@media (max-width: 500px){
+		font-size: 4.5vw;
+	}
 }
 
 h3 {
-	font-size: 4vh;
+	font-size: 2.3vw;
+	
+	@media (max-width: 500px){
+		font-size: 4.5vw;
+		margin: 20px 0px 0px 0px;
+	}	
+}
+
+p {
+	font-size: 20px;
+	font-family: @bodyFontstack;
+}
+
+.info {
+	.flexProperties();
+	background-color: @lightBackgroundColor;
+	padding: 5%;
+
+	.about-me {
+		width: 42%;
+		margin: 0% 3% 2% 0%;
+		@media (max-width: 500px){
+			width: 100%;
+			text-align: justify;
+		}
+	}
+}
+
+.lists {
+	.flexProperties();
+	align-items: center;
+	.rightSection();
+	
+	@media (max-width: 500px){
+		margin: 0;
+	}
+}
+
+ul {
+	margin: 20px 10px 0px 20px;
+	font-size: 20px;
+}
+
+.resume {
+	display: flex;
+	justify-content: space-around;
+	background-image: linear-gradient(@lightBackgroundColor, @darkBackgroundColor);
+	padding: 5%;
+	margin: 5% 0%;
+
+	@media (max-width: 500px){
+		flex-wrap: wrap;
+	}
+
+	.education {
+		width: 42%;
+		margin-right: 3%;
+
+		@media (max-width: 500px){
+			width: 100%;
+			margin-top: -10px;
+		}
+	}
+}
+
+.experience {	
+	.rightSection();
+
+	@media (max-width: 500px){
+		width: 100%;
+		margin: 0px 0px 10px 0px;
+		text-align: justify;
+	}
+
+	p {
+		margin-top: 20px;
+	}
+}
+
+.footer {
+	text-align: center;
+	margin-bottom: 5%;
+
+	a {
+		font-style: italic;
+		text-decoration: none;
+	}
 }
